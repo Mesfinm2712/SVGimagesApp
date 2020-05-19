@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <title>Edit/Save SVG's</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+
+    <h3>Create and Edit SVG's</h3>
+
+    <script src="/index.js"></script>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+
+
+
+<form ref='uploadForm' id='uploadForm' action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="uploadFile" id="myFile" accept=".svg" required></input>
+    <input type="submit" id= "submitFile">
+</form>
+
+
+
+<h2>File Log Panel</h2>
+
+<table style="width:100%" class="fileTable">
+  <thead>
+    <tr>
+      <th><center>Image(click to download)</center></th>
+      <th><center>Filename(click to download)</center></th>
+      <th><center>File size</center></th>
+      <th><center>Number of rectangles</center></th>
+      <th><center>Number of circles</center></th>
+      <th><center>Number of paths</center></th>
+      <th><center>Number of groups</center></th>	
+    </tr>
+  </thead>
+  <tbody class= "scrollFileTable">
+  	<tr>
+  		<th>NA</th>
+  	</tr>
+  </tbody>
+
+</table>
+
+<center><h2>ViewPanel</h2></center>
+<center><p>Select a file to output on table below</p></center>
+
+<nav role="navigation">
+  <ul>
+    <!-- <li><a href="#">One</a></li> -->
+    <li><a href="#"><center>Select a file</center></a>
+      <ul class="dropdown">
+        <select id="dropdownId">
+            <option> Select File </option>
+        </select>
+<div class="demo">
+<br>
+<input disabled= "true" id = "editTitleVal" onclick="editTitleFunc()" type="submit" value="Edit Title"/>
+	<br>  
+</div>
+
+<div class="demo">
+	<br>   
+<input disabled= "true" id = "editDescVal" onclick="editDescFunc()" type="submit" value="Edit Description"/>
+<br>  
+</div>
+<!-- <button disabled= "true" id = "createAttId" onclick="editAtt()">Create new attribute</button> -->
+<input disabled= "true" id = "createAttId" onclick="editAtt()" type= "submit" value= "Create new attribute"/>
+<p id="editAtt"></p>
+
+
+<!-- <button disabled= "true" id= "createSVGId" onclick="createSVGImage()">Create SVG</button> -->
+<input disabled= "true" id= "createSVGId" onclick="createSVGImage()"type= "submit" value= "Create SVG"/>
+<p id="makeSVG"></p>
+
+<!-- <button disabled= "true" id= "createRectId" onclick="createRect()">Create Rectangle</button> -->
+<input disabled= "true" id= "createRectId" onclick="createRect()"type= "submit" value= "Create Rectangle"/>
+<p id="makeRect"></p>
+
+<!-- <button disabled= "true" id= "createCircId" onclick="createCirc()">Create Circle</button> -->
+<input disabled= "true" id= "createCircId" onclick="createCirc()"type= "submit" value= "Create Circle"/>
+<p id="makeCirc"></p>
+
+<!-- <button disabled= "true" id= "scaleCircId" onclick="getScaleCirc()">Click to scale all circles</button> -->
+<input disabled= "true" id= "scaleCircId" onclick="getScaleCirc()"type= "submit" value= "Click to scale all circles"/>
+<p id="makeCirc"></p>
+
+<!-- <button disabled= "true" id= "scaleRectId" onclick="getScaleRect()">Click to scale all rectangles</button> -->
+<input disabled= "true" id= "scaleRectId" onclick="getScaleRect()"type= "submit" value= "Click to scale all rectangles"/>
+<p id="makeCirc"></p>
+
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
+
+<head>
+    </head>
+
+        <p id="result"></p>
+
+        <script>
+
+            
+        </script>
+
+<table style="width:100%" class="viewPanel">
+  <tbody>
+    <tr>
+        <th>No image</th>
+    </tr>
+  </tbody>
+</table>
+
+<table style="width:100%" class="row2">
+  <thead>
+    <tr>
+        <td><center>Title</center></td>
+        <td><center>Description</center></td>
+    </tr>
+</thead>
+    <tbody>
+    <tr>
+        <th>no information</th>
+        <th>no information</th>
+    </tr>
+    </tbody>
+</table>
+
+<table style="width:100%" class="titleDesc">
+  <thead>
+    <tr>
+      <th><center>Component</center></th>
+      <th><center>Summary</center></th>    
+      <th><center>Other Attributes</center></th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th>no information</th>
+        <th>no information</th>
+        <th>no information</th>
+    </tr>
+  </tbody>
+
+</table>
+<center><h2>List of Attributes to edit</h2></center>
+<table style="width:100%" class="attTable">
+  <thead>
+    <tr>
+      <th><center>Attribute Number</center></th>    
+      <th><center>Attribute Name</center></th>
+      <th><center>Attribute Value</center></th>    
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <th>empty</th>
+        <th>empty</th>
+        <th>empty</th>
+    </tr>
+  </tbody>
+
+</table>
+
+<center><h2>Select Attribute to Edit</h2></center>
+    <p></p>
+        <center><select id="attListDrop">
+            <option> Select File </option>
+        </select></center>
+
+<center><h2>Must Login to Database to use appliction</h2></center>
+
+<center><button id= "dataBaseButton" onclick="dataBaseLogin()">Click to login to database</button></center>
+<p id="dataBaseButton"></p>
+
+<input disabled= "false" id = "clearData" onclick="clearDataFunc()" type= "submit" value= "Clear Database"/>
+<p id="clearData"></p>
+
+<left><input disabled= "false" id = "displayDB" onclick="displayDBFunc()" type= "submit" value= "Display DB Status"/>
+<p id="displayDB"></left></p>
+
+
+<center><h2> </h2></center>
+
+<!-- create query tables from database here -->
+
+    <center><h3>FILE Table from database(query 1)</h3></center>
+<center><p>Select an order to output database table 'FILE' below</p></center>
+
+        <center><select id="orderFile">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="dataFile">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Filename</center></th>
+      <th><center>File size</center></th>
+      <th><center>Title</center></th>
+      <th><center>Description</center></th>
+      <th><center>Number of rectangles</center></th>
+      <th><center>Number of circles</center></th>
+      <th><center>Number of paths</center></th>
+      <th><center>Number of groups</center></th>  
+      <th><center>timeStamp</center></th>  
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+<!-- query 2 -->
+</table>
+    <center><h3>FILE Table from database(query 2)</h3></center>
+<center><p>Select an order to output database table 'FILE' below</p></center>
+
+        <center><select id="orderQuery2">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="query2">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Filename</center></th>
+      <th><center>File size</center></th>
+      <th><center>Title</center></th>
+      <th><center>Description</center></th>
+      <th><center>Number of rectangles</center></th>
+      <th><center>Number of circles</center></th>
+      <th><center>Number of paths</center></th>
+      <th><center>Number of groups</center></th>  
+      <th><center>timeStamp</center></th>  
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+
+</table>
+<!-- query 3-->
+</table>
+   <center><h3>FILE Table from database(query 3)</h3></center>
+	<center><p>Select an order to output database table 'IMG_CHANGE' below</p></center>
+
+        <center><select id="orderQuery3">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="query3">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Range of modified files</center></th>
+      <th><center>FileName</center></th>
+      <th><center>File Size</center></th>
+      <th><center>Change Description</center></th>
+      <th><center>Change Summary</center></th>
+      <th><center>TimeStamp</center></th>
+      <th><center>Number of changes to file</center></th>
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+
+</table>
+
+<!-- query 4-->
+</table>
+   <center><h3>FILE Table from database(query 4)</h3></center>
+<center><p>Click button to input range and select shape</p></center>
+<center><input id = "query4Button" onclick="updateQuery4();" type= "submit" value= "query4"/>
+<p id="query4Button"></p></center>
+<center><p>Select an order to output database table 'FILE' below</p></center>
+
+
+
+        <center><select id="orderQuery4">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="query4">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Range</center></th>
+      <th><center>FileName</center></th>
+      <th><center>File Size</center></th>
+      <th><center>Shape Count</center></th>
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+
+</table>
+<!-- query 5 -->
+</table>
+   <center><h3>FILE Table from database(query 5)</h3></center>
+<center><p>Select an order to output database table 'DOWNLOAD' below</p></center>
+
+        <center><select id="orderQuery5">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="query5">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Filename</center></th>
+      <th><center>Download Description</center></th>
+      <th><center>Download Time</center></th>
+      <th><center>number of downloads</center></th> 
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+
+</table>
+
+<!-- query 6 -->
+</table>
+   <center><h3>FILE Table from database(query 6)</h3></center>
+<center><p>Select an order to output database table 'IMG_CHANGE' below</p></center>
+
+        <center><select id="orderQuery6">
+            <option> Select Order </option>
+        </select></center>
+
+<table style="width:100%" class="query6">
+  <thead>
+    <tr>
+      <!-- <th><center>Image(click to download)</center></th> -->
+      <th><center>Filename</center></th>
+      <th><center>change_type</center></th>
+      <th><center>change_summary</center></th>
+      <th><center>change_time</center></th> 
+      <th><center>number of changes</center></th> 
+    </tr>
+  </thead>
+  <tbody class= "scrollOrderFile">
+    <tr>
+      <th>NA</th>
+    </tr>
+  </tbody>
+
+</table>
+
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+</head>
+    <p></p>
+
+</body>
+</html>
+
+
+
+
+
+
+

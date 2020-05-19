@@ -1,0 +1,410 @@
+html {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: lightblue;
+
+    background-color: lightblue;
+    animation-name: animationColour;
+    animation-duration: 4s;
+    animation-iteration-count: 100000;
+}
+@keyframes animationColour {
+  from {background-color: lightblue;}
+  to {background-color: lightgreen;}
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: lightblue;
+    padding: 25px;
+    background: url(mountain.jpg);
+    background-repeat: no-repeat;
+    background-size: auto;
+
+}
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.fileTable{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.dataFile{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.query2{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#clearData  {float: right} {
+    position:absolute;
+    transition: .5s ease;
+    /*top: 180%;*/
+    /*left: 69%;*/
+    margin: 4px 2px;
+    font-size: 14px;
+    text-align: center;
+    padding: 5px 15px;
+
+}
+#editTitleVal {
+    position:absolute;
+    transition: .5s ease;
+    top: 0%;
+    left: 50%;
+    padding: 10px 21px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#editDescVal {
+    position:absolute;
+    transition: .5s ease;
+    top: 0%;
+    left: 70%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#createSVGId {
+    position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 50%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#createAttId {
+    position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 70%;
+    padding: 10px 3px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#createCircId {
+    position:absolute;
+    transition: .5s ease;
+    top: 80%;
+    left: 50%;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#createRectId {
+    position:absolute;
+    transition: .5s ease;
+    top: 80%;
+    left: 70%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#scaleCircId {
+    position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 0%;
+    padding: 10px 33px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#scaleRectId {
+    position:absolute;
+    transition: .5s ease;
+    top: 80%;
+    left: 0%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.fileTable {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.fileTable thead {
+  background: black;
+  color:#fff;
+}
+
+.fileTable th, .fileTable td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+.dataFile {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.dataFile thead {
+  background: black;
+  color:#fff;
+}
+
+.dataFile th, .dataFile td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+.query2 {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.query2 thead {
+  background: black;
+  color:#fff;
+}
+
+.query2 th, .query2 td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+.query3{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+.query3 {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.query3 thead {
+  background: black;
+  color:#fff;
+}
+
+.query3 th, .query3 td {
+  padding: 5px;
+  text-align: center;
+  width: 200px;
+}
+.query4{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+.query4 {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.query4 thead {
+  background: black;
+  color:#fff;
+}
+
+.query4 th, .query4 td {
+  padding: 5px;
+  text-align: center;
+  /*width: 200px;*/
+  width: 400px;
+
+}
+.query5{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+.query5 {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.query5 thead {
+  background: black;
+  color:#fff;
+}
+
+.query5 th, .query5 td {
+  padding: 5px;
+  text-align: center;
+  width: 400px;
+  /*width: 200px;*/
+}
+.query6{
+    width: 450px;
+    display:block;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+
+.query6 {
+  /*display:block;*/
+  width: 100%;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+
+.query6 thead {
+  background: black;
+  color:#fff;
+}
+
+.query6 th, .query6 td {
+  padding: 5px;
+  text-align: center;
+  /*width: 200px;*/
+  width: 300px;
+
+}
+
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}
+
+
+a {
+  text-decoration: none;
+}
+
+nav {
+    font-family: monospace;
+}
+
+ul {
+    background: lightblue;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: black;
+    background: black;
+    display: block;
+    float: center;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+  
+li a {
+  color: #fff;
+}
+
+li:hover {
+    background: blue;
+    cursor: pointer;
+}
+
+ul li ul {
+    visibility: hidden;
+    background: blue;
+    min-width: 5rem;
+    opacity: 0;
+    position: absolute;
+    transition: all 0.5s ease;
+    display: none;
+    margin-top: 1rem;
+    left: 0;
+}
+
+ul li:hover > ul,
+ul li ul:hover {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+ul li ul li {
+    clear: both;
+  width: 100%;
+}
