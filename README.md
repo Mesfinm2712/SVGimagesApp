@@ -1,0 +1,1 @@
+This is web app that enables users to log in to their accounts stored in a database and create or edit SVG images. The app features a backend parser that assists in the SVG creation and editing process, and then visually renders the final output on the front-end, providing an intuitive and seamless user experience.
